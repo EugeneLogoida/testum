@@ -1,0 +1,29 @@
+
+
+.breadcrumbs{
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    ol{
+        margin-bottom: 0;
+
+    }
+    .breadcrumb-item{
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+    .active{
+        color: black;
+        text-decoration: none;
+    }
+      
+}
+
+.products{
+    background-color: #f6f6f6;
+    padding: 60px 0;
+}
+.products-text{
+    padding: 60px 0;
+}

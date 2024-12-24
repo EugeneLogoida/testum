@@ -1,0 +1,26 @@
+<main>
+    <section class="page-banner">
+        <div class="page-banner-img">
+            <div class="container">
+                <div class="row">
+                    <div class="page-banner-text">
+                        <h1 class="mb-3">Наші об'єкти</h1>
+                        <h3>Testum-UA - твій найкращий вибір!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <div class="row">
+                @for(photo of gallery; track $index){
+                    <div class="col-4 mb-3">
+                        <img src="{{photo}}" alt="photo" class="img-fluid">
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+</main>

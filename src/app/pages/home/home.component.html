@@ -1,0 +1,296 @@
+<main>
+  <section class="hero-section">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" bis_skin_checked="1">
+      <div class="carousel-inner" bis_skin_checked="1">
+        <div class="carousel-item active" bis_skin_checked="1">
+          <img src="../assets/images/slide1.jpg" alt="" class="d-block w-100 vh-100">
+        </div>
+        <div class="carousel-item" bis_skin_checked="1">
+          <img src="../assets/images/slide2.jpg" alt="" class="d-block w-100 vh-100">
+        </div>
+        <div class="carousel-item" bis_skin_checked="1">
+          <img src="../assets/images/slide3.jpg" alt="" class="d-block w-100 vh-100">
+        </div>
+      </div>
+    </div>
+    <div class="hero-text">
+      <h2 class="mb-3">Testum UA - Завод виробник</h2>
+      <h1 class="mb-5">Гаражні ворота та автоматика під замовлення</h1>
+      <a [routerLink]="['/']" class="button">Детальніше</a>
+    </div>
+  </section>
+
+  <section class="description">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <div class="description-main-video">
+              Тут має бути основне відео
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-4">
+                  <div class="description-video">
+                    Тут має бути менше відео
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="description-video">
+                    Тут має бути менше відео
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="description-video">
+                    Тут має бути менше відео
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <h4>
+              Найкращий вибір тільки для Вас
+            </h4>
+            <h2>
+              Гаражні ворота та автоматика від Testum UA
+            </h2>
+            <p>
+              Ви потрапили на сторінку Testum-UA, інтернет-магазину, який пропонує широкий асортимент продукції для
+              гаражних
+              воріт, промислових воріт, автоматики для розпашних, відкатних та гаражних воріт, захисних ролет на ворота,
+              вікон, дверей, шлагбаумів, болардів та всіх необхідних аксесуарів і комплектуючих, а також металевих
+              конструкцій, таких як розпашні ворота, ворота відкатні, хвіртки, навіси та перила.
+            </p>
+            <p>
+              Історія нашої компанії почалася 15 років тому, у 2010 році, з продажу гаражних секційних воріт, монтажу
+              автоматики для воріт та виготовлення металевих конструкцій. Ці напрямки залишаються для нас пріоритетними
+              і
+              досі. Щомісяця до нас звертається декілька сотень клієнтів, які просять виготовити якісні ворота для
+              оселі,
+              складу, гаражу та інших об'єктів.
+            </p>
+            <a [routerLink]="['/']" class="button">Детальніше</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="catalogue">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <h4>
+              Testum UA
+            </h4>
+            <h2>
+              Каталог продукції
+            </h2>
+          </div>
+          <div class="row">
+            <owl-carousel-o [options]="customOptions">
+              @for(product of products; track product.id){
+
+              <ng-template carouselSlide>
+                <div class="product-card ">
+                  <img [src]="product.image" alt="">
+                  <h3 class="mb3">{{ product.name }}</h3>
+                  <a href="" [routerLink]='["/"]' class="carousel-button">Детальніше</a>
+                </div>
+              </ng-template>
+              }
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="services">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-6">
+            <h4>
+              Гаражні ворота та автоматика від Testum UA
+            </h4>
+            <h2>
+              Наші послуги
+            </h2>
+            <p>
+              Ви потрапили на сторінку Testum-UA, інтернет-магазину, який пропонує широкий асортимент продукції для
+              гаражних
+              воріт, промислових воріт, автоматики для розпашних, відкатних та гаражних воріт, захисних ролет на ворота,
+              вікон, дверей, шлагбаумів, болардів та всіх необхідних аксесуарів і комплектуючих, а також металевих
+              конструкцій, таких як розпашні ворота, ворота відкатні, хвіртки, навіси та перила.
+            </p>
+            <p>
+              Історія нашої компанії почалася 15 років тому, у 2010 році, з продажу гаражних секційних воріт, монтажу
+              автоматики для воріт та виготовлення металевих конструкцій. Ці напрямки залишаються для нас пріоритетними
+              і
+              досі. Щомісяця до нас звертається декілька сотень клієнтів, які просять виготовити якісні ворота для
+              оселі,
+              складу, гаражу та інших об'єктів.
+            </p>
+            <a [routerLink]="['/']" class="button">Детальніше</a>
+          </div>
+          <div class="col-6">
+            <div class="section-photo">
+              Тут має бути основне photo
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="advantages">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+
+          <div class="text-center">
+            <h3>
+              Ви все ще думаєте яку компанію обрати?
+            </h3>
+            <h2 class="mb-5">
+              Обирайте нас, тому що ми:
+            </h2>
+            <div class="row d-flex justify-content-between">
+              <div class="advantages-card col-3">
+                <div class="advantages-card-border">
+                  <fa-icon [icon]="faShippingFast"></fa-icon>
+                </div>
+                <p>Безкоштовна доставка по всій Україні</p>
+              </div>
+              <div class="advantages-card col-3">
+                <div class="advantages-card-border">
+                  <fa-icon [icon]="faHandHoldingDollar"></fa-icon>
+                </div>
+                <p>Найкращі цінові пропозиції на всі товари</p>
+              </div>
+              <div class="advantages-card col-3">
+                <div class="advantages-card-border">
+                  <fa-icon [icon]="faGift"></fa-icon>
+                </div>
+                <p>Постійні знижки та акції на велику кількість товарів та послуг у магазині</p>
+              </div>
+              <div class="advantages-card col-3">
+                <div class="advantages-card-border">
+                  <fa-icon [icon]="faScrewdriverWrench"></fa-icon>
+                </div>
+                <p>Монтаж та техпідтримка від професійних та кваліфікованих спеціалістів</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="gallery">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <h4>
+              Testum UA
+            </h4>
+            <h2>
+              Галерея
+            </h2>
+          </div>
+          <div>
+
+
+            <owl-carousel-o [options]="customOptions">
+              @for(imageUrl of galleryImages; track $index){
+
+              <ng-template carouselSlide>
+
+                <img [src]=[imageUrl] alt="">
+
+              </ng-template>
+              }
+            </owl-carousel-o>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <section class="end-text">
+    <div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div>
+            <p>
+              Якщо ви шукаєте автоматичні ворота, паркани чи металеві конструкції від виробника онлайн, ви потрапили за
+              правильною адресою. Купуючи продукцію безпосередньо у Testum-UA, ви отримуєте високу якість, надійність і
+              вигідні умови покупки. Завдяки прямій співпраці з провідними виробниками, ми гарантуємо оригінальність
+              кожного товару та конкурентоспроможні ціни.
+            </p>
+            <h4>
+              Чому обирають Testum-UA?
+            </h4>
+            <p>
+              Купуючи продукцію від Testum-UA, ви отримуєте:
+            </p>
+            <ul>
+              <li><b>Оптимальну ціну та високу якість.</b> Ми пропонуємо прямі ціни від виробника, що дозволяє уникнути
+                зайвих переплат.</li>
+              <li><b>Широкий асортимент.</b> У нас ви знайдете гаражні ворота, відкатні та розпашні ворота, автоматику,
+                паркани, хвіртки, захисні ролети та багато іншого.</li>
+              <li><b>Сучасні рішення. </b>Ми працюємо лише з перевіреними постачальниками, такими як BFT, Roger, NICE,
+                та іншими європейськими виробниками, що гарантує довговічність та стильний дизайн. </li>
+            </ul>
+            <h4>
+              Доставка та монтаж
+            </h4>
+            <p>
+              Testum-UA здійснює доставку продукції по всій Україні. Незалежно від вашого місцезнаходження, ми
+              забезпечимо швидке та надійне отримання замовлення. Наші спеціалісти також пропонують професійний монтаж
+              автоматичних систем, воріт та парканів. Замовляючи установку разом із продукцією, ви можете бути впевнені,
+              що все буде встановлено якісно та вчасно.
+
+            </p>
+            <h4>
+              Продукція для дому та бізнесу
+            </h4>
+            <p>
+              Наша продукція чудово підходить як для приватних будинків, так і для комерційних об’єктів. Від елегантних
+              автоматичних воріт до міцних металевих конструкцій — кожен товар розроблений, щоб поєднувати практичність,
+              довговічність і стиль.
+
+            </p>
+            <h4>
+              Як зробити замовлення?
+            </h4>
+            <p>
+              Щоб купити продукцію від Testum-UA, достатньо вибрати потрібний товар на нашому сайті, додати його до
+              кошика і оформити замовлення. Ми пропонуємо кілька способів оплати та доставки, щоб зробити процес
+              максимально простим і зручним.
+            </p>
+            <p>Не зволікайте — обирайте Testum-UA, щоб отримати якісні автоматичні системи, паркани чи металеві
+              конструкції, які стануть надійним захистом та естетичною прикрасою вашого будинку чи об’єкту!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>

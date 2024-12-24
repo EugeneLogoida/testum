@@ -1,0 +1,27 @@
+<main>
+    <section class="page-banner">
+        <div class="page-banner-img">
+            <div class="container">
+                <div class="row">
+                    <div class="page-banner-text">
+                        <h1 class="mb-3">Блог</h1>
+                        <h3>Testum-UA - твій найкращий вибір!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog">
+        <div class="container">
+            @for(blog of blogs; track blog.id){
+                <div class="row">
+                    <h3>{{ blog.name }}</h3>
+                    <p>{{ blog.description }}</p>
+                </div>
+            }
+            <div class="row"></div>
+        </div>
+    </section>
+
+
+</main>

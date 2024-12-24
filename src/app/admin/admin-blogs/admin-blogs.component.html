@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="blog-form">
+                <form [formGroup]="blogForm" (ngSubmit)="addBlog()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Головна назва</label>
+                        <input formControlName="name" name="name" type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fullText" class="form-label">Контент</label>
+                        <!-- formControlName="fullText"  -->
+                        <quill-editor 
+                            [modules]="modules"
+                            style="height: 800px;">
+                        </quill-editor>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        Додати
+
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>
