@@ -1,1 +1,92 @@
-<p>product-info works!</p>
+<app-call-us></app-call-us>
+<main>
+    <section class="page-banner">
+        <div class="page-banner-img">
+            <div class="container">
+                <div class="row">
+                    <div class="page-banner-text">
+                        <h1 class="mb-3">{{ currentProduct?.name }}</h1>
+                        <h3>Testum-UA - твій найкращий вибір!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <div class="product-img mb-3">
+                        <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                    </div>
+
+                    <owl-carousel-o [options]="customOptions">
+          
+                        
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                        <ng-template carouselSlide> 
+                            <img [src]="currentProduct?.imagePath" alt="product" class="img-fluid">
+                        </ng-template>
+                      </owl-carousel-o>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <h3>
+                            {{ currentProduct?.name }}
+                        </h3>
+                        <div class="product-price">
+                            @if(currentProduct?.discount > 0){
+                                <span class="text-decoration-line-through old-price">{{ currentProduct?.price }} грн/м² </span>
+                                <span>{{ currentProduct?.price - currentProduct?.price/currentProduct?.discount }} грн/м²</span>
+
+                            } @else if(currentProduct?.discount == 0) {
+                                <span>{{ currentProduct?.price }} грн/м²</span>
+                            }
+                            
+
+                        </div>
+                        <p><b>Максимальна Висота:</b> {{ currentProduct?.height }} м.</p>
+                        <p><b>Максимальна Ширина:</b> {{ currentProduct?.width }} м.</p>
+                        <p><b>Розмір профілю:</b> {{ currentProduct?.profileSize }} мм.</p>
+                        <p><b>Розмір відступів:</b> {{ currentProduct?.gapSize }} мм.</p>
+                        <p><b>Тип:</b> {{ currentProduct?.type }}</p>
+                        <p><b>Матеріал:</b> {{ currentProduct?.material }}</p>
+                        <p><b>Кольори:</b> {{ currentProduct?.colors }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row product-description">
+                <h4>Опис</h4>
+                <p>{{ currentProduct?.description }}</p>
+            </div>
+            <div class="row product-description">
+                <h4>Схожі товари</h4>
+
+               
+                    <app-carousel [products]="allProducts"></app-carousel>
+                
+            </div>
+        </div>
+
+    </section>
+
+</main>

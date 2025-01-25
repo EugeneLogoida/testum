@@ -1,0 +1,49 @@
+.product-card {
+    border: 20px solid #e0e0e0;
+    background-color: white;
+    margin-bottom: 26px;
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+  &__info {
+    padding: 40px;
+    padding-bottom: 10px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: row; /* Ensure the content is arranged in a row */
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-card-img {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    height: 100%; /* Make sure the image container takes up the full height */
+    width: auto; /* Maintain aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide any overflow */
+  }
+
+  img {
+    height: 100%; /* Image should take up the full height of its parent */
+    width: 100%; /* Image should fill the width of the container */
+    object-fit: cover; /* Preserve the aspect ratio and cover the space */
+  }
+
+  h4{
+    margin-bottom: 24px;
+    &:hover{
+      text-decoration: underline;
+
+    }
+  }
+  p{
+    margin-bottom: 10px;
+  }
+}

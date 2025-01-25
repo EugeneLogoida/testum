@@ -13,6 +13,9 @@ import { AdminCategoriesComponent } from './admin/admin-categories/admin-categor
 import { AdminPhotosComponent } from './admin/admin-photos/admin-photos.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminComponent } from './admin/admin.component';
+import { BlogInfoComponent } from './pages/blog/blog-info/blog-info.component';
+
+
 
 export const routes: Routes = [
   {
@@ -25,7 +28,7 @@ export const routes: Routes = [
     component: ProductsComponent,
   },
   {
-    path: 'products/:category/:id',
+    path: 'products/:id',
     component: ProductInfoComponent,
   },
   {
@@ -35,6 +38,10 @@ export const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
+  },
+  {
+    path: 'blog/:id',
+    component: BlogInfoComponent,
   },
   {
     path: 'calculator',

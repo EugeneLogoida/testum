@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "fonts";
+@use "fonts";
+@import url('../node_modules/quill/dist/quill.snow.css');
 
 :root {
   --primary-color: #fc0203;
@@ -71,6 +72,8 @@ a {
   background-image: url("../public/assets/images/page-banners/page-banner.jpg");
   aspect-ratio: 2.5;
   z-index: 2;
+  background-size: 100%;
+  background-position: center;
 
   .page-banner-img {
     background-color: rgba(20, 20, 20, 0.6);
@@ -84,4 +87,21 @@ a {
   .page-banner-text {
     margin-top: 130px;
   }
+}
+
+.edit-button{
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 6px;
+  background-color: rgb(62, 139, 255);
+    border-radius: 8px;
+  &:hover{
+    border-color: rgb(62, 139, 255);
+    color: rgb(62, 139, 255);
+  }
+}
+.delete-button{
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
 }

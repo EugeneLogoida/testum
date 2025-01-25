@@ -1,1 +1,17 @@
-<p>blog-card works!</p>
+<div class="blog-card">
+    <a href="" [routerLink]="['/blog', id]">
+        <div class="blog-card-info">
+            <div class="blog-card-img">
+                <img [src]=[imagePath] alt="">
+            </div>
+            <div>   
+                <h3>{{ name }}</h3>
+                <p>{{ description }}</p>
+            </div>
+        </div>
+        <div class="blog-card-date">
+            <span>{{ date | date }}</span>
+            <span class="more-info">Детальніше ⟶</span>
+        </div>
+    </a>
+</div>

@@ -3,15 +3,15 @@ import { faPhone, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-
 import { faInstagram, faFacebook, faTelegram  } from '@fortawesome/free-brands-svg-icons';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CallUsComponent } from "../../components/call-us/call-us.component";
 @Component({
-  selector: 'app-contacts',
-  standalone: true,
-  imports: [
+    selector: 'app-contacts',
+    imports: [
     FontAwesomeModule,
-    RouterLink
-  ],
-  templateUrl: './contacts.component.html',
-  styleUrl: './contacts.component.scss'
+    CallUsComponent
+],
+    templateUrl: './contacts.component.html',
+    styleUrl: './contacts.component.scss'
 })
 export class ContactsComponent {
   faPhone = faPhone;

@@ -1,1 +1,11 @@
-<p>product-card works!</p>
+<div class="product-card">
+    <a href="" [routerLink]="['/products', id]">
+        <div class="product-card__info">
+            <h4>{{ name }}</h4>
+            <p>Профіля: <b>{{ profileSize }} мм</b></p>
+            <p>Проміжок: <b>{{ gapSize }} мм</b></p>
+            <p>Ціна від: <b>{{ price }} грн/м²</b></p>
+        </div>
+        <img [src]=[imagePath] alt="">
+    </a>
+</div>

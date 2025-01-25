@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CallUsComponent } from "../../components/call-us/call-us.component";
 
 const GALLERY = [
   '../assets/images/gallery/gallery1.jpg',
@@ -10,11 +11,10 @@ const GALLERY = [
 ];
 
 @Component({
-  selector: 'app-our-objects',
-  standalone: true,
-  imports: [],
-  templateUrl: './our-objects.component.html',
-  styleUrl: './our-objects.component.scss'
+    selector: 'app-our-objects',
+    imports: [CallUsComponent],
+    templateUrl: './our-objects.component.html',
+    styleUrl: './our-objects.component.scss'
 })
 export class OurObjectsComponent {
   gallery = GALLERY;

@@ -1,1 +1,25 @@
-<p>blog-info works!</p>
+<app-call-us></app-call-us>
+<section class="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="blog-info">
+                    <div class="d-flex">
+                        <div class="col-10 mb-3">
+                            <h1>{{ currentBlog?.name }}</h1>
+                        </div>
+                        <div class="col-2 text-end">
+                            <p>{{ currentBlog?.date | date }}</p>
+                        </div>
+                    </div>
+                    <div class="blog-info__description">
+                        <div [innerHTML]="currentBlog?.fullText" class="text-break">
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

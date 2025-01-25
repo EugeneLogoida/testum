@@ -1,23 +1,58 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
+            <div class="category-fields">
+                <table class="table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+            
+                                <th scope="col">№</th>
+                                <th scope="col">Назва</th>
+                                <th scope="col">Опис</th>
+                                <th scope="col">Дії</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (blog of blogs; track blog.id) {
+                            <tr >
+    
+                                    <td>№ {{ blog.id }}</td>
+                                    <td>{{ blog.name }}</td>
+                                    <td>{{ blog.description }}</td>
+                                    <td>
+                                        <button (click)="editBlog(blog)" type="button" class="button edit-button">Edit</button>
+                                        <button (click)="deleteBlog(blog)" type="button" class="button delete-button">Delete</button>
+                                    </td>
+                                    
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </table>
+            </div>
             <div class="blog-form">
-                <form [formGroup]="blogForm" (ngSubmit)="addBlog()">
+
+                <h3 class="mb-4">Створити/змінити блог</h3>
+                <form [formGroup]="blogForm" >
                     <div class="mb-3">
                         <label for="name" class="form-label">Головна назва</label>
                         <input formControlName="name" name="name" type="text" class="form-control" id="name">
                     </div>
                     <div class="mb-3">
+                        <label for="description" class="form-label">Короткий опис</label>
+                        <input formControlName="description" name="name" type="text" class="form-control" id="description">
+                    </div>
+
+                    <div class="mb-3 d-flex flex-column">
                         <label for="fullText" class="form-label">Контент</label>
-                        <!-- formControlName="fullText"  -->
-                        <quill-editor 
-                            [modules]="modules"
-                            style="height: 800px;">
+                        <quill-editor class="content-editor" [placeholder]="''" [modules]="modules" formControlName="fullText" >
                         </quill-editor>
                     </div>
 
-                    <button type="submit" class="btn btn-success w-100">
-                        Додати
+                    <button type="submit" class="btn btn-success w-100" (click)="addBlog()"> 
+                        {{ editStatus ? "Зберегти зміни" : "Додати блог" }}
 
                     </button>
 

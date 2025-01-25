@@ -1,31 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { BlogsService } from '../../shared/services/blogs.service';
+import { BlogModel } from '../../shared/models/blog.interface';
+import { BlogCardComponent } from "../../components/blog-card/blog-card.component";
+import { DatePipe } from '@angular/common';
+import { CallUsComponent } from "../../components/call-us/call-us.component";
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+    selector: 'app-blog',
+    imports: [BlogCardComponent, CallUsComponent],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.scss'
 })
 export class BlogComponent {
-  blogs = [
-    {
-      id: 1, 
-      name: 'Blog 1',
-      description: 'This is blog 1',
-
-    },
-    {
-      id: 2, 
-      name: 'Blog 2',
-      description: 'This is blog 2',
-      
-    },
-    {
-      id: 3, 
-      name: 'Blog 3',
-      description: 'This is blog 3',
-      
-    },
-  ]
+  blogsService = inject(BlogsService);
+  blogs:any = []
+  constructor() {
+    this.blogsService.getBlogs().subscribe((data) => {
+      this.blogs = data;
+    });
+    
+  }
 }

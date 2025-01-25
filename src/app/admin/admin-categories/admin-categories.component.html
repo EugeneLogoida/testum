@@ -1,1 +1,48 @@
-<p>admin-categories works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="category-fields">
+                <table class="table">
+                    <thead>
+                        <tr>
+        
+                            <th scope="col">№</th>
+                            <th scope="col">Назва</th>
+                            <th scope="col">Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (category of categories; track category.id) {
+                        <tr >
+
+                                <td>№ {{ category.id }}</td>
+                                <td>{{ category.name }}</td>
+                                <td>
+                                    <button (click)="editCategory(category)" type="button" class="button edit-button">Edit</button>
+                                    <button (click)="deleteCategory(category)" type="button" class="button delete-button">Delete</button>
+                                </td>
+                                
+                                
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="blog-form">
+                <h3 class="mb-4">Створити категорію</h3>
+                <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Назва категорії</label>
+                        <input formControlName="name" name="name" type="text" class="form-control" id="name">
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">
+                        Додати
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>

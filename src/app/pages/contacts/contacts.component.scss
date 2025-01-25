@@ -2,17 +2,34 @@
     padding: 60px 0;
     fa-icon{
         font-size: 24px;
-        color: var(--primary-color);
         margin-bottom: 26px;
+        color: var(--primary-color);
     }
-
+    
     .socials{
+        fa-icon{
+            color: black;
+            &:hover{
+                color: var(--primary-color);
+                transition: all 0.3s ease;
+            }
+        }
         display: flex;
         gap: 12px;
         justify-content: center;
     }
        
 }
+.info{
+    h4{
+        margin-bottom: 22px;
+        margin-top: 16px;
+    }
+    a:hover{
+        color: var(--primary-color);
+    }
+}
+
 
 .map{
     padding: 60px 0;

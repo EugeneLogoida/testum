@@ -1,11 +1,12 @@
 header {
   position: fixed;
+  // position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   padding: 15px 0;
-  // background: rgba(20, 20, 20, 0.8);
-  background: rgba(156, 156, 156, 0.8);
+  background: rgba(20, 20, 20, 0.8);
+  // background: rgba(156, 156, 156, 0.8);
   z-index: 100;
 
   color: white;
@@ -79,5 +80,15 @@ span {
 .multilang {
   p {
     margin-bottom: 0;
+  }
+}
+
+.switch-lang{
+  background-color: transparent;
+  color: white;
+  border: none;
+  &:hover{
+    border-bottom: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
   }
 }

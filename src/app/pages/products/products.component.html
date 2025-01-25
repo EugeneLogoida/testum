@@ -1,3 +1,4 @@
+<app-call-us></app-call-us>
 <main>
     <section class="page-banner">
         <div class="page-banner-img">
@@ -20,9 +21,9 @@
                 <div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Library</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Data</li>
+                            <li class="breadcrumb-item"><a [routerLink]="['']" routerLinkActive="router-link-active" >Головна</a></li>
+                            <li class="breadcrumb-item"><a href="">Каталог</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Паркани</li>
                         </ol>
                     </nav>
                 </div>
@@ -34,7 +35,17 @@
         <div class="container">
             <div class="row">
                 @for(product of products; track $index){
-                    <app-product-card></app-product-card>
+                    <div class="col-4">
+                        <app-product-card
+                            [id]="product.id"
+                            [name]="product.name"
+                            [profileSize]="product.profileSize"
+                            [gapSize]="product.gapSize"
+                            [price]="product.price"
+                            [imagePath]="product.imagePath"
+                        ></app-product-card>
+
+                    </div>
                 }
             </div>
         </div>

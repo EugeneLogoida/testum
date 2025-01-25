@@ -1,3 +1,4 @@
+<app-call-us></app-call-us>
 <main>
     <section class="page-banner">
         <div class="page-banner-img">
@@ -15,8 +16,13 @@
         <div class="container">
             @for(blog of blogs; track blog.id){
                 <div class="row">
-                    <h3>{{ blog.name }}</h3>
-                    <p>{{ blog.description }}</p>
+                    <app-blog-card
+                        [name]="blog.name"
+                        [description]="blog.description"
+                        [imagePath]="blog.imagePath"
+                        [id]="blog.id"
+                        [date]="blog.date"
+                    ></app-blog-card>
                 </div>
             }
             <div class="row"></div>

@@ -1,11 +1,10 @@
 <header>
 
-    <!-- <fa-icon class="icon" [icon]="faCoffee"></fa-icon> -->
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 d-flex align-items-center">
                 <div class="logo">
-                    <a href="">
+                    <a href="" routerLink="/">
                         <img src="../assets/images/logo2.png" alt="">
                         
                     </a>
@@ -17,17 +16,18 @@
                     <div>
                         <fa-icon class="icon" [icon]="faPhone"></fa-icon>
                         <a href="tel:+380666684508">+38 (066) 668-45-08</a>
-                        <span>Подзвонити вам?</span>
                         
                         
                     </div>
                     <div class="schedule">
-                        <p>ПН-ПТ з 9:00 по 18:00</p>
-                        <p>СБ з 9:00 по 15:00</p>
+                        <p>{{ 'header.schedule1'| translate }}</p>
+                        <p>{{ 'header.schedule2'| translate }}</p>
 
                     </div>
                     <div class="multilang">
-                        <p>UA | RU</p>
+                        <button (click)="switchLanguage('uk')" class="switch-lang">UA</button>
+                        |
+                        <button (click)="switchLanguage('ru')" class="switch-lang">RU</button>
 
                     </div>
                     <div class="header-socials">
@@ -39,28 +39,28 @@
                 <div>
                     <ul class="menu-header d-flex justify-content-between">
                         <li>
-                            <a [routerLink]="['']" routerLinkActive="active">Головна</a>
+                            <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ 'header.menu.main'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/products']" routerLinkActive="active">Каталог</a>
+                            <a href="" [routerLink]="['/products']" routerLinkActive="active">{{ 'header.menu.products'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/delivery']" routerLinkActive="active">Доставка</a>
+                            <a href="" [routerLink]="['/delivery']" routerLinkActive="active">{{ 'header.menu.delivery'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/our-objects']" routerLinkActive="active">Наші об'єкти</a>
+                            <a href="" [routerLink]="['/our-objects']" routerLinkActive="active">{{ 'header.menu.our-objects'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/about-us']" routerLinkActive="active">Про нас</a>
+                            <a href="" [routerLink]="['/about-us']" routerLinkActive="active">{{ 'header.menu.about-us'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/contacts']" routerLinkActive="active">Контакти</a>
+                            <a href="" [routerLink]="['/contacts']" routerLinkActive="active">{{ 'header.menu.contacts'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" [routerLink]="['/blog']" routerLinkActive="active">Блог</a>
+                            <a href="" [routerLink]="['/blog']" routerLinkActive="active">{{ 'header.menu.blog'| translate }}</a>
                         </li>
                         <li>
-                            <a href="" class="calc-btn"> Розрахувати</a>
+                            <a href="" class="calc-btn"> {{ 'header.menu.calculate'| translate }}</a>
                         </li>
                     </ul>
                 </div>

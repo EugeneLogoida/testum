@@ -1,0 +1,19 @@
+owl-carousel {
+  height: 300px;
+  img {
+    height: 100px;
+  }
+}
+
+owl-carousel-o {
+  img {
+    width: 85%;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

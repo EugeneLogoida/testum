@@ -1,0 +1,12 @@
+<owl-carousel-o [options]="customOptions">
+    @for(product of products; track product.id){
+
+    <ng-template carouselSlide>
+        <div class="product-card ">
+            <img [src]="product.imagePath" alt="">
+            <h3 class="mb-  3">{{ product.name }}</h3>
+            <a href="" [routerLink]="['/products', product.id]" class="carousel-button">Детальніше</a>
+        </div>
+    </ng-template>
+    }
+</owl-carousel-o>

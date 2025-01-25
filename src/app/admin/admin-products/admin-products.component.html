@@ -1,1 +1,118 @@
-<p>admin-products works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="category-fields">
+                <table class="table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+            
+                                <th scope="col">№</th>
+                                <th scope="col">Назва</th>
+                                <th scope="col">Опис</th>
+                                <th scope="col">Ціна</th>
+                                <th scope="col">Знижка</th>
+                                <th scope="col">Категорія</th>
+                                <th scope="col">Дії</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (product of products; track product.id) {
+                            <tr >
+    
+                                    <td>№ {{ product.id }}</td>
+                                    <td>{{ product.name }}</td>
+                                    <td>{{ product.description }}</td>
+                                    <td>{{ product.price }}</td>
+                                    <td>{{ product.discount }}</td>
+                                    <td>{{ product.category.name }}</td>
+                                    <td>
+                                        <button (click)="editProduct(product)" type="button" class="button edit-button">Edit</button>
+                                        <button (click)="deleteProduct(product)" type="button" class="button delete-button">Delete</button>
+                                    </td>
+                                    
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </table>
+            </div>
+            <div class="blog-form">
+
+                <h3 class="mb-4">Створити/змінити продукт</h3>
+                <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Головна назва</label>
+                        <input formControlName="name" name="name" type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Опис</label>
+                        <input formControlName="description" name="name" type="text" class="form-control" id="description">
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <label for="price" class="form-label">Ціна</label>
+                            <input formControlName="price" name="name" type="text" class="form-control" id="price">
+                        </div>
+                        <div class="col">
+                            <label for="discount" class="form-label">Знижка (%)</label>
+                            <input formControlName="discount" name="name" type="text" class="form-control" id="discount">
+                        </div>
+                        <div class="col">
+                            <label for="category" class="form-label">Категорія</label>
+                            <!-- <input formControlName="category" name="name" type="text" class="form-control" > -->
+                            <select formControlName="category" class="form-select">
+                                @for (category of categories; track $index) {
+                                    <option [ngValue]="category">{{ category.name
+                                        }}
+                                    </option>
+
+                                }
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="profileSize" class="form-label">Розмір профілю</label>
+                            <input formControlName="profileSize" name="name" type="text" class="form-control" >
+                        </div>
+                        <div class="col">
+                            <label for="gapSize" class="form-label">Розмір відступів</label>
+                            <input formControlName="gapSize" name="name" type="text" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="height" class="form-label">Висота</label>
+                            <input formControlName="height" name="name" type="text" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="width" class="form-label">Ширина</label>
+                            <input formControlName="width" name="name" type="text" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="type" class="form-label">Тип</label>
+                            <input formControlName="type" name="name" type="text" class="form-control" id="description">
+                        </div>
+                        <div class="col">
+                            <label for="material" class="form-label">Матеріал</label>
+                            <input formControlName="material" name="name" type="text" class="form-control" id="description">
+                        </div>
+                        <div class="col">
+                            <label for="description" class="form-label">Кольори</label>
+                            <input formControlName="colors" name="name" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100 mt-3" (click)="addProduct()"> 
+                        {{ editStatus ? "Зберегти зміни" : "Додати продукт" }}
+
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>

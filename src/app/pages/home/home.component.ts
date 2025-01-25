@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { faShippingFast, faHandHoldingDollar, faGift, faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { PRODUCTS } from '../../../../public/assets/products/products';
+import { CallUsComponent } from "../../components/call-us/call-us.component";
 
 const GALLERY = [
   '../assets/images/gallery/gallery1.jpg',
@@ -17,15 +19,16 @@ const GALLERY = [
 ];
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
+    selector: 'app-home',
+    imports: [
     RouterLink,
     CarouselModule,
-    FontAwesomeModule
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    FontAwesomeModule,
+    CallUsComponent,
+    TranslateModule
+],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
@@ -63,7 +66,13 @@ export class HomeComponent {
     nav: false,
   }
 
-
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('uk');
+  }
+  
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
 
   products = PRODUCTS;

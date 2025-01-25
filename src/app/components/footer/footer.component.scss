@@ -1,8 +1,10 @@
 footer {
-  background: #b9b9b9;
+  background: #222;
   p {
     margin-bottom: 0;
   }
+  color: white;
+
 }
 
 ul {
@@ -13,6 +15,20 @@ ul {
       &:hover {
         color: var(--primary-color)
       }
+    }
+  }
+}
+
+.header-socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 26px;
+  .icon {
+    font-size: 30px;
+    &:hover {
+      color: var(--primary-color);
+      cursor: pointer;
+      transition: all 0.3s ease-in;
     }
   }
 }
